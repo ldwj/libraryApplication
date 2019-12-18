@@ -1,18 +1,18 @@
 package com.ldwj.libraryapplication;
 
-import android.content.Context;
+import android.app.Application;
 import android.support.multidex.MultiDex;
-import android.support.multidex.MultiDexApplication;
 /**
  * 程序application
  */
-public class BaseApplication extends MultiDexApplication {
+public class BaseApplication extends Application {
     private static BaseApplication mInstance = null;
 
 
     @Override
     public void onCreate() {
         super.onCreate();
+        MultiDex.install(this);
         mInstance = this;
     }
 
@@ -20,9 +20,5 @@ public class BaseApplication extends MultiDexApplication {
         return mInstance;
     }
 
-    @Override
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
-        MultiDex.install(this);
-    }
+
 }
