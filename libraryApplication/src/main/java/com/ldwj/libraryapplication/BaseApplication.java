@@ -3,7 +3,6 @@ package com.ldwj.libraryapplication;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
-
 /**
  * 程序application
  */
